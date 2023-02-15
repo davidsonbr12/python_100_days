@@ -1,18 +1,24 @@
 # A simple tip calculator.  Prints the total plus tip per person.
 
 print("Welcome to the tip calculator.")
+# Get total ticket price for the meal
 while True:
-    bill = float(input("What was the total bill? $"))
-    if bill < 0:
-        print("Please enter a positive value for the total.")
-    else:
+    try:
+        bill = float(input("What was the total bill? $"))
         break
+    except ValueError:
+        print("You must enter a number")
+        continue
+
+# Get tip % from predefined list of tips
 while True:
     tip_amount = int(input("What percentage tip would you like to give? 10, 12, or 15? "))
     if tip_amount not in (10, 12, 15):
         print("Please select from the provided tip options.")
     else:
         break
+
+# Get size of party
 while True:
     party_size = int(input("How many people to split the bill? "))
     if party_size < 1:
@@ -20,6 +26,7 @@ while True:
     else:
         break
 
+# Calculations to settle the final bill per person
 tip_percent = tip_amount / 100
 total_tip_amount = bill * tip_percent
 total_bill_amount = bill + total_tip_amount
