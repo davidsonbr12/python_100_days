@@ -5,10 +5,11 @@ print("Welcome to the tip calculator.")
 while True:
     try:
         bill = float(input("What was the total bill? $"))
-        break
     except ValueError:
         print("You must enter a number")
         continue
+    else:
+        break
 
 # Get tip % from predefined list of tips
 while True:
