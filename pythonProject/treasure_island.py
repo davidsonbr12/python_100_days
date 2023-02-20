@@ -23,26 +23,24 @@ ____/______/______/______/______/_____"=.o|o_.--""___/______/______/______/____
 print("Welcome to Treasure Island.")
 print("Your mission is to find the treasure.")
 
-#https://www.draw.io/?lightbox=1&highlight=0000ff&edit=_blank&layers=1&nav=1&title=Treasure%20Island%20Conditional.drawio#Uhttps%3A%2F%2Fdrive.google.com%2Fuc%3Fid%3D1oDe4ehjWZipYRsVfeAx2HyB7LCQ8_Fvi%26export%3Ddownload
-
-#Write your code below this line 👇
-# choice 1 -- left or right continue or fall in a hole
-while True:
-    choice1 = input('You\'re at a crossroads, where do you want to go? Type "left" or "right".').lower()
-    if choice1 not in ("left", "right"):
-        print('You must enter "left" or "right"')
-        continue
-    else:
-        break
+choice1 = input('You\'re at a crossroads, where do you want to go? Type "left" or "right').lower()
 
 if choice1 == "left":
-    while True:
-        choice2 = input('You\'ve come to a lake. There is an island in the middle of the lake. '
-                        'Type "wait" to wait for a boat. Type "swim" to swim across.')
-        if choice2 not in ("wait", "swim"):
-            print('You must enter "wait" or "swim".')
-            continue
+    choice2 = input('You\'ve come to a lake. There is an island in the middle of the lake. '
+                    'Type "wait" to wait for a boat. Type "swim" to swim across.').lower()
+    if choice2 == 'wait':
+        choice3 = input('You arrive at the island unharmed. '
+                        'There is a house with three doors. One red, one yellow, one blue.'
+                        'Which color do you choose?').lower()
+        if choice3 == 'red':
+            print('It\'s a room full of fire. Game over.')
+        elif choice3 == 'yellow':
+            print('You found the treasure! You win!')
+        elif choice3 == 'blue':
+            print('You enter a room full of beasts. Game over.')
         else:
-            break
+            print('You chose a door that does\'nt exist. Game over.')
+    else:
+        print('You were eaten by an angry trout. Game over.')
 else:
-    print("You fell into a hole. Game over.")
+    print('You fell into a hole. Game over.')
