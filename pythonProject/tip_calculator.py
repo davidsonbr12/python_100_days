@@ -16,6 +16,7 @@ while True:
     tip_amount = int(input("What percentage tip would you like to give? 10, 12, or 15? "))
     if tip_amount not in (10, 12, 15):
         print("Please select from the provided tip options.")
+        continue
     else:
         break
 
