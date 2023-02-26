@@ -19,7 +19,7 @@ for char in range(1, nr_symbols + 1):
 for char in range(1, nr_numbers + 1):
     password += random.choice(numbers)
 
-#Randomize the inputs
+# Randomize the inputs
 random_password = ''
 for char in range(1, len(password) + 1):
     random_password += random.choice(password)
